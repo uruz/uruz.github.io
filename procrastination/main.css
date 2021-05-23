@@ -1,0 +1,17 @@
+body {
+    background-color: #c6d7de;
+    padding: 0;
+}
+
+#v0 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*will-change: transform;*/
+}
+
+#set-height {
+    display: block;
+    height: 13500px;
+}

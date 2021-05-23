@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Procrastination</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <script type="application/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <div id="set-height"></div>
+    <p>
+        hello
+    </p>
+
+    <video id="v0" tabindex="0">
+<!--        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="videos/clouds2.mp4"></source>-->
+    </video>
+<script>
+
+    var req = new XMLHttpRequest();
+    req.open('GET', 'videos/clouds3.mp4', true);
+    req.responseType = 'blob';
+
+    req.onload = function() {
+       // Onload is triggered even on 404
+       // so we need to check the status code
+       if (this.status === 200) {
+          var videoBlob = this.response;
+          var vid = URL.createObjectURL(videoBlob); // IE10+
+          video = document.getElementById('v0');
+          video.src = vid;
+       }
+    }
+    req.onerror = function() {
+       // Error
+    }
+
+    req.send();
+
+
+    var vid = document.getElementById('v0');
+    window.onscroll = function(){
+        vid.pause();
+    };
+
+    // setInterval(function(){
+    //     vid.currentTime = window.pageYOffset/400;
+    // }, 40);
+
+    $(document).ready(function(){
+        var vid = $('#v0')[0];
+        var setH = $('#set-height');
+        setH.clientHeight = parseInt(vid.duration*400);
+        console.log('here');
+        console.log(vid.duration*400);
+    });
+
+    var renderLoop = function(){
+        requestAnimationFrame( function(){
+            //console.log(window.pageYOffset);
+            vid.currentTime = window.pageYOffset/400;
+            renderLoop();
+        });
+    };
+    renderLoop();
+
+</script>
+</body>
+</html>
