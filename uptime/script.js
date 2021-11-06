@@ -64,26 +64,30 @@ function setLight(row, col, state) {
 function drawMessage(messageArray, leftPointer) {
     var messageLength = messageArray.length;
 
-    var curState = Math.abs(leftPointer % 4);
-    for (var col = 0; col < messageLength; col++) {
-        for (var row = 0; row < HEIGHT; row++) {
-            if (row === 0 || row === HEIGHT-1 ) {
-                if (col % 4 !== curState){
-                    setLight(row, col, 'ant');
-                }else{
-                    setLight(row, col, 'antoff');
+    var even = Math.abs(leftPointer % 2);
+    var curState = Math.abs(leftPointer % 5);
+    if (even) {
+        for (var col = 0; col < messageLength; col++) {
+            for (var row = 0; row < HEIGHT; row++) {
+                if (row <= stage || row >= HEIGHT - 1 - stage) {
+                    var offset = col % stage;
+                    if (col % 5 !== curState  && col % 5 !== curState - 1) {
+                        setLight(row, col, 'ant');
+                    } else {
+                        setLight(row, col, 'antoff');
+                    }
                 }
-            }
-            if (col === 0 || col === SCROLLER_LENGTH-1){
-                if (row % 4 !== curState){
-                    setLight(row, col, 'ant');
-                }else{
-                    setLight(row, col, 'antoff');
+                if (col <= stage || col >= SCROLLER_LENGTH - 1 - stage) {
+                    offset = row % stage;
+                    if (row % 5 !== curState  && row % 5 !== curState - 1 ) {
+                        setLight(row, col, 'ant');
+                    } else {
+                        setLight(row, col, 'antoff');
+                    }
                 }
             }
         }
     }
-
 
     if (messageLength > 0) {
         for (var col = 0; col < messageLength; col++) {
@@ -412,7 +416,7 @@ function draw() {
         if (leftPointer === furthestLeftPoint) {
             leftPointer = SCROLLER_LENGTH + 1;
             stage += 1;
-            if (stage % 4 === 0){
+            if (stage % 4 === 0) {
                 stage = 0;
             }
         }
