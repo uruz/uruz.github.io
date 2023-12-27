@@ -10,13 +10,10 @@
 <body>
     <script type="application/javascript" src="js/jquery-3.6.0.min.js"></script>
     <div id="set-height"></div>
-    <p>
-        hello
-    </p>
-
-    <video id="v0" tabindex="0">
-<!--        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="videos/clouds2.mp4"></source>-->
-    </video>
+    <h1 id="maintitle">
+        Procrastination
+    </h1>
+    <video id="v0" tabindex="0"></video>
 <script>
 
     var req = new XMLHttpRequest();
@@ -35,7 +32,7 @@
     }
     req.onerror = function() {
        // Error
-    }
+    };
 
     req.send();
 
