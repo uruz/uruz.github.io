@@ -1,0 +1,54 @@
+body{
+  background-color: white;
+}
+
+.wrapper{
+  display: block;
+  width: 980px;
+  height: 150px;
+  margin: 10px auto;
+  --arcanum-color-gap-absence: #ffc136;
+  --arcanum-color-gap-illness: #f67360;
+  --arcanum-color-gap-learning: #00c09c;
+  --arcanum-color-gap-maternity: #dc97ca;
+  --arcanum-color-gap-vacation: #73c9eb;
+  --arcanum-color-merge-requirements-changed: #b267ff;
+  --arcanum-hitmap-scale0: #ededed;
+  --arcanum-hitmap-scale1: #b0d7ff;
+  --arcanum-hitmap-scale2: #5cabf9;
+  --arcanum-hitmap-scale3: #027bf3;
+  --arcanum-hitmap-scale4: #0755a2;
+}
+
+.year{
+  display: block;
+  height: 150px;
+  border-width: 1px;
+  border-color: black;
+}
+
+.light {
+  width: 16px;
+  height: 16px;
+  /*margin: 1px 1px;*/
+  text-align: center;
+  font-size: 11px;
+  float: left;
+  border: 1px solid white;
+}
+
+.off {
+  background-color: var(--arcanum-hitmap-scale0);
+}
+
+.on1{background-color: var(--arcanum-hitmap-scale1);}
+.on2{background-color: var(--arcanum-hitmap-scale2);}
+.on3{background-color: var(--arcanum-hitmap-scale3);}
+.on4{background-color: var(--arcanum-hitmap-scale4);}
+
+.illness{border-color: var(--arcanum-color-gap-illness);}
+.absense{border-color: var(--arcanum-color-gap-absence);}
+.learning{border-color: var(--arcanum-color-gap-learning);}
+.vacation{border-color: var(--arcanum-color-gap-vacation);}
+
+.deb{border: 1px dashed red;}
