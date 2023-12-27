@@ -1,3 +1,9 @@
+# Project-specific
+firstcondition/.env/
+uptime/ # temp
+downtime/ # temp
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
