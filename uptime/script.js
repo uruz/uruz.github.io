@@ -2,13 +2,13 @@
 
 var SCROLLER_LENGTH = 64;
 var HEIGHT = 9;
-var fps = 30;
+var fps = 5;
 
 var myMessage = textToLED('аурелиано буэндиа');
 var leftPointer = SCROLLER_LENGTH + 1;
 var rightPointer = 0;
 var furthestLeftPoint = 0 - myMessage.length;
-var stage = 0;
+var stage = -1;
 
 
 function clearLights() {
@@ -313,17 +313,17 @@ function charToLED(theChar) {
         case 'А' :
             theLed = [
                 [0, 0, 0, 1, 1, 1, 1, 1],
-                [0, 0, 1, 0, 0, 1, 0, 0],
-                [0, 1, 0, 0, 0, 1, 0, 0],
-                [0, 0, 1, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 1, 1, 0, 0],
+                [0, 1, 0, 0, 1, 1, 0, 0],
+                [0, 0, 1, 0, 1, 1, 0, 0],
                 [0, 0, 0, 1, 1, 1, 1, 1]];
             break;
         case 'У':
             theLed = [
                 [0, 1, 1, 1, 1, 0, 1, 0],
-                [0, 0, 0, 0, 1, 0, 0, 1],
-                [0, 0, 0, 0, 1, 0, 0, 1],
-                [0, 0, 0, 0, 1, 0, 0, 1],
+                [0, 0, 0, 0, 1, 1, 0, 1],
+                [0, 0, 0, 0, 1, 1, 0, 1],
+                [0, 0, 0, 0, 1, 1, 0, 1],
                 [0, 1, 1, 1, 1, 1, 1, 0]
             ];
             break;
@@ -403,7 +403,7 @@ function charToLED(theChar) {
             ];
             break;
         default:
-            theLed = [[0, 0, 0, 0, 0, 0, 0]];
+            theLed = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]];
     }
     return theLed;
 }
