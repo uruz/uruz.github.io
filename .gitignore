@@ -2,7 +2,7 @@
 firstcondition/.env/
 uptime/ # temp
 downtime/ # temp
-
+firstcondition/node_modules/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
