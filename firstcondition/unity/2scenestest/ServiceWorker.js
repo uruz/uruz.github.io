@@ -1,9 +1,9 @@
 const cacheName = "BBB-v1-0.1";
 const contentToCache = [
-    "Build/test_final2.loader.js",
-    "Build/test_final2.framework.js",
-    "Build/test_final2.data",
-    "Build/test_final2.wasm",
+    "Build/test_final3.loader.js",
+    "Build/test_final3.framework.js",
+    "Build/test_final3.data",
+    "Build/test_final3.wasm",
     "TemplateData/style.css"
 
 ];
