@@ -8,6 +8,7 @@ Backend
 * virtualenv .env
 * pip install -r requirements.txt
 * ./render.sh
+* python3 -m http.server 8080
 
 Frontend
 ========
